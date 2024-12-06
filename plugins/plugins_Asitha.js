@@ -27,7 +27,7 @@ async function getPremiumUsers() {
     return preUsers.map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net");
 }
 
-const { storenumrepdata } = require('../lib/nonbtn')
+const { storenumrepdata } = require('../lib/nonbutton)
 function formatNumber(num) {
     return String(num).padStart(2, '0');
 } 
