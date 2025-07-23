@@ -22,7 +22,7 @@ let baseUrl;
 })();
 
 async function getPremiumUsers() {
-    const preUser = await fetchJson('https://raw.githubusercontent.com/athulakumara604/ASITHA-MD-DATABASE/refs/heads/main/Moviedl/primiyam.json');
+    const preUser = await fetchJson('https://raw.githubusercontent.com/athulakumara604/KAVIDU-MD-DATABASE/refs/heads/main/Moviedl/primiyam.json');
     const preUsers = preUser.split(",");
     return preUsers.map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net");
 }
@@ -33,7 +33,7 @@ function formatNumber(num) {
 } 
 
 
-const yourName = "*POWERED by ASITHA-MD*"; // YOURBOTNAME 💚 කියන තැනට ඔයාගේ බොට්ගේ නම හරි ඔයාගෙ නම හරි දාන්න.
+const yourName = "*POWERED by KAVIDU-MD*"; // YOURBOTNAME 💚 කියන තැනට ඔයාගේ බොට්ගේ නම හරි ඔයාගෙ නම හරි දාන්න.
 
 
 
@@ -188,10 +188,10 @@ let desc = `
 *╎* *📆 Lᴀꜱᴛ Uᴘᴅᴀᴛᴇ :* ${data.datalist.list[0].updated}
 *╎* *👤 Dᴇᴠᴇʟᴏᴘᴇʀꜱ :* ${data.datalist.list[0].developer.name}
 *╎*
-*╰───────────────◦•◦❥•*\n\n\> *POWERED by ASITHA-MD*`
+*╰───────────────◦•◦❥•*\n\n\> *POWERED by KAVIDU-MD*`
 
 await conn.sendMessage(from,{image: {url: data.datalist.list[0].icon},caption: desc},{quoted: mek})
-await conn.sendMessage(from,{document: {url: data.datalist.list[0].file.path_alt},fileName: data.datalist.list[0].name,mimetype: 'application/vnd.android.package-archive',caption: `> *POWERED by ASITHA-MD*`},{quoted: mek})
+await conn.sendMessage(from,{document: {url: data.datalist.list[0].file.path_alt},fileName: data.datalist.list[0].name,mimetype: 'application/vnd.android.package-archive',caption: `> *POWERED by KAVIDU-MD*`},{quoted: mek})
         
 await m.react("✅")
 
@@ -311,7 +311,7 @@ cmd({
 },
 async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-      const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/ASITHA-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
+      const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/KAVIDU-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
 
         // Fetch premium users
         const premiumUsers = await getPremiumUsers();
@@ -348,8 +348,8 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
         }];
 
         let message = {
-            header: 'ASITHA-MD SIHALASUB.LK MOVIE SEARCH',
-            footer: '> *POWERED by ASITHA-MD*',
+            header: 'KAVIDU-MD SIHALASUB.LK MOVIE SEARCH',
+            footer: '> *POWERED by KAVIDU-MD*',
             body: `📌 Select Your Movie`
         };
 
@@ -370,7 +370,7 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-      const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/ASITHA-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
+      const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/KAVIDU-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
 
         // Premium users බලනවා
         const premiumUsers = await getPremiumUsers();
@@ -403,7 +403,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ▫️🔗 *Url :* ${q} 
 *➟➟➟➟➟➟➟➟➟➟➟➟➟➟➟*
 
-> *POWERED by ASITHA-MD*
+> *POWERED by KAVIDU-MD*
 `;
 
         const quality = "SD 480p";
@@ -421,7 +421,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
   🎬 *2 | 720p :* ${directLink1 ?? 'cannot be found'}
   🎬 *3 | 1080p :* ${directLink2 ?? 'cannot be found'}
 
-> *POWERED by ASITHA-MD*
+> *POWERED by KAVIDU-MD*
 `;
 
         await conn.sendMessage(from, { image: { url: data2?.result?.images?.[0] ?? 'https://i.postimg.cc/9FGJDwzB/error-rubber-stamp-word-error-inside-illustration-109026446.jpg' }, caption: cc }, { quoted: mek });
@@ -443,11 +443,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                 await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });
                 await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });
                 if (messageType === '1') {
-                    await conn.sendMessage(from, { document: { url: directLink }, mimetype: "video/mp4", fileName: `🎬 ASITHA-MD 🎬\n${sss?.result?.title ?? 'Movie'}.mkv`, caption: `> ${sss?.result?.title ?? 'Movie'}\n\n> 480p\n\n> *POWERED by ASITHA-MD*` }, { quoted: mek });
+                    await conn.sendMessage(from, { document: { url: directLink }, mimetype: "video/mp4", fileName: `🎬 KAVIDU-MD 🎬\n${sss?.result?.title ?? 'Movie'}.mkv`, caption: `> ${sss?.result?.title ?? 'Movie'}\n\n> 480p\n\n> *POWERED by KAVIDU-MD*` }, { quoted: mek });
                 } else if (messageType === '2') {
-                    await conn.sendMessage(from, { document: { url: directLink1 }, mimetype: "video/mp4", fileName: `🎬 ASITHA-MD 🎬\n${sss?.result?.title ?? 'Movie'}.mkv`, caption: `> ${sss?.result?.title ?? 'Movie'}\n\n> 720p\n\n> *POWERED by ASITHA-MD*` }, { quoted: mek });
+                    await conn.sendMessage(from, { document: { url: directLink1 }, mimetype: "video/mp4", fileName: `🎬 KAVIDU-MD 🎬\n${sss?.result?.title ?? 'Movie'}.mkv`, caption: `> ${sss?.result?.title ?? 'Movie'}\n\n> 720p\n\n> *POWERED by KAVIDU-MD*` }, { quoted: mek });
                 } else if (messageType === '3') {
-                    await conn.sendMessage(from, { document: { url: directLink2 }, mimetype: "video/mp4", fileName: `🎬 ASITHA-MD 🎬\n${sss?.result?.title ?? 'Movie'}.mkv`, caption: `> ${sss?.result?.title ?? 'Movie'}\n\n> 1080p\n\n> *POWERED by ASITHA-MD*` }, { quoted: mek });
+                    await conn.sendMessage(from, { document: { url: directLink2 }, mimetype: "video/mp4", fileName: `🎬 KAVIDU-MD 🎬\n${sss?.result?.title ?? 'Movie'}.mkv`, caption: `> ${sss?.result?.title ?? 'Movie'}\n\n> 1080p\n\n> *POWERED by KAVIDU-MD*` }, { quoted: mek });
                 }
               await conn.sendMessage(from, { react: { text: '✅', key: mek.key } });
 
@@ -472,7 +472,7 @@ cmd({
 },
 async(conn, mek, m, { from, q, sender, reply }) => {
     try {
-      const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/ASITHA-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
+      const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/KAVIDU-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
 
         const premiumUsers = await getPremiumUsers();
         
@@ -499,9 +499,9 @@ async(conn, mek, m, { from, q, sender, reply }) => {
         // Document (file) එක යවනවා
         await conn.sendMessage(from, { 
             document: { url: data },
-            caption: `\n\n> *POWERED by ASITHA-MD*`,
+            caption: `\n\n> *POWERED by KAVIDU-MD*`,
             mimetype: "video/mp4",
-            fileName: `☠️ASITHA-MD☠️.mp4`
+            fileName: `☠️KAVIDU-MD☠️.mp4`
         });
 
         await conn.sendMessage(from, { react: { text: '✅', key: mek.key } });
@@ -523,7 +523,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, mentionByTag, db_pool, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isCreator ,isDev, isAdmins, reply}) => {
 try{
 const premiumUsers = await getPremiumUsers();
-        const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/ASITHA-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
+        const msr = (await fetchJson('https://raw.githubusercontent.com/athulakumara604/KAVIDU-MD-DATABASE/refs/heads/main/Mreply.json')).replyMsg
 
         // Check if the sender is a premium user
         const isPreUser = premiumUsers.includes(sender);
@@ -536,7 +536,7 @@ if ( !m.quoted ) return reply('*ℹ Please mention a Derect Link*')
 if ( !q ) return 
 const data = q.split(" & ")[0] 
 const datas = q.split(" & ")[1] 
- await conn.sendMessage(data, { document : { url : m.quoted.msg  } ,caption: `\n${datas}\n\n> *POWERED by ASITHA-MD*`  ,mimetype: "video/mp4" , fileName: `🎬 ASITHA-MD 🎬\n${datas}.mp4` } )
+ await conn.sendMessage(data, { document : { url : m.quoted.msg  } ,caption: `\n${datas}\n\n> *POWERED by KAVIDU-MD*`  ,mimetype: "video/mp4" , fileName: `🎬 KAVIDU-MD 🎬\n${datas}.mp4` } )
 		} catch (e) {
 reply('❗ Error' + e )
 l(e)
