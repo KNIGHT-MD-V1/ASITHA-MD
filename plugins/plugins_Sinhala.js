@@ -5,96 +5,9 @@ const {readEnv} = require('../lib/database')
 const axios = require('axios')
 const os = require("os")
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, Func, fetchJson} = require('../lib/functions')
-// Fetch premium users from the premium.json file
-async function getPremiumUsers() {
-    const preUser = await fetchJson('https://raw.githubusercontent.com/athulakumara604/ASITHA-MD-DATABASE/refs/heads/main/Moviedl/primiyam.json');
-    const preUsers = preUser.split(",");
-    return preUsers.map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net");
-}
-let baseUrl = "https://dark-yasiya-movie-apis.vercel.app"
-let key = "&apikey=asitha9key"
-
 
 cmd({
-    pattern: "moviedown2",
-    alias: ["md"],
-    desc: "Check bot setting.",
-    react: "🎬",
-    category: "extra",
-    filename: __filename
-},
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-      
-  
-      
-// Fetch premium users
-        const premiumUsers = await getPremiumUsers();
-        
-        // Check if the sender is a premium user
-        const isPreUser = premiumUsers.includes(sender);
-
-        // If the user is not a premium user, deny access
-        if (!isPreUser) {
-            return reply("🚩 This command is only available to premium users, buy premium 0743381623");
-        }
-let data1 = await fetchJson(`${baseUrl}/api/sin/search?text=${q}${key}`)
-
-
-const config = await readEnv();
-const ownerdata = (await axios.get('https://raw.githubusercontent.com/athulakumara604/ASITHA-MD-DATABASE/refs/heads/main/ditels/ditels.json')).data
-let LOGO = ownerdata.imageurl;
-let BTN = ownerdata.button;
-let FOOTER = ownerdata.footer;
-let BTNURL = ownerdata.buttonurl;
-let prefix = config.PREFIX;
-
-        let buttons = [{
-                    name: "cta_url",
-                    buttonParamsJson: JSON.stringify({
-                        display_text: BTN,
-                        url: BTNURL,
-                        merchant_url: BTNURL
-                    }),
-                },
-                  {
-        name: "cta_url",
-        buttonParamsJson: JSON.stringify({
-            display_text: "GITHUB",
-            url: "https://github.com/ASITHA-MD/ASITHA-MD",
-            merchant_url: "https://github.com/ASITHA-MD/ASITHA-MD"
-        }),}, 
-                { name: 'single_select',
-            buttonParamsJson: JSON.stringify({
-               title: 'Select One Movie :)',                        
-            sections: [{                            
-              title: 'Please select one',
-                  rows: [{
-                     title: `${data1.result.data[0].title}`,
-                     //description: ``,
-                     id: `${prefix}mdd ${data1.result.data[0].link}`
-                  }]
-               }]
-            })
-         }]
-let msg = `📌 Select Your Movie`
-  let message = {
-            header: 'ASITHA-MD MOVIE SEARCH',
-            footer: '> *POWERED by ASITHA-MD*',
-            body: msg
-        };
-
-        return conn.sendButtonMessage(from, buttons, m, message);
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-      
-
-cmd({
-    pattern: "mdd",
+    pattern: "sinhalasub",
     desc: "Check bot setting.",
     react: "🎬",
     category: "movie",
@@ -102,22 +15,13 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-
-  // Fetch premium users
-        const premiumUsers = await getPremiumUsers();
-        
-        // Check if the sender is a premium user
-        const isPreUser = premiumUsers.includes(sender);
-
-        // If the user is not a premium user, deny access
-        if (!isPreUser) {
-            return reply("🚩 This command is only available to premium users, buy premium 0743381623");
+   if (!q) return await reply("please provide name");
         }
-let data2 = await fetchJson(`${baseUrl}/api/sin/search?text=${q}${key}`)
+let data2 = await fetchJson(`https://www.dark-yasiya-api.site/movie/sinhalasub/search?text=$`)
 //let tut = Object.keys(data2.result.data).length
 
 const config = await readEnv();
-let  urll = await fetchJson(`${baseUrl}/api/sin/movie?url=${q}${key}`)
+let  urll = await fetchJson(`https://www.dark-yasiya-api.site/movie/sinhalasub/movie?url=$`)
 let cc = `
 ☘️ *𝗧ɪᴛʟᴇ : ${urll.result.data.title}*
 
